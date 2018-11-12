@@ -23,6 +23,8 @@ RUN apk add --no-cache ca-certificates bash git \
 
 WORKDIR /config
 
+CMD bash
+
 RUN apk add --no-cache ca-certificates openssl && \
     cd /tmp && \
     wget -O docker-base.zip https://releases.hashicorp.com/docker-base/${DOCKER_BASE_VERSION}/docker-base_${DOCKER_BASE_VERSION}_linux_amd64.zip && \
@@ -46,5 +48,3 @@ HEALTHCHECK --interval=5s --timeout=5s \
 
 ENTRYPOINT ["/usr/local/bin/entry.sh"]
 RUN 
-
-CMD bash
