@@ -47,4 +47,3 @@ HEALTHCHECK --interval=5s --timeout=5s \
     CMD mountpoint -q $MOUNTPOINT || exit 1
 
 ENTRYPOINT ["/usr/local/bin/entry.sh"]
-RUN 
