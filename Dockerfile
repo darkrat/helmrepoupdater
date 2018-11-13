@@ -40,10 +40,10 @@ ENV MOUNTPOINT /mnt/sshfs-1
 RUN apk update && apk add sshfs && rm -rf /var/cache/apk/*
 RUN rm /sbin/halt /sbin/poweroff /sbin/reboot
 
-ADD entry.sh /usr/local/bin/entry.sh
-RUN chmod 755 /usr/local/bin/entry.sh
+#ADD entry.sh /usr/local/bin/entry.sh
+#RUN chmod 755 /usr/local/bin/entry.sh
 
-HEALTHCHECK --interval=5s --timeout=5s \
-    CMD mountpoint -q $MOUNTPOINT || exit 1
+#HEALTHCHECK --interval=5s --timeout=5s \
+#    CMD mountpoint -q $MOUNTPOINT || exit 1
 
-ENTRYPOINT ["/usr/local/bin/entry.sh"]
+#ENTRYPOINT ["/usr/local/bin/entry.sh"]
